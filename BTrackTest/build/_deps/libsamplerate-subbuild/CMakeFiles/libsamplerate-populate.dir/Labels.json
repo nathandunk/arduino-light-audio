@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/libsamplerate-populate"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/e6e1b391260450bc6ec488cbc41d9dc6/libsamplerate-populate.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/66092d22208a03fe7c9b63b9f8fee8fb/libsamplerate-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-install.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-download.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-update.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-build.rule"
+		},
+		{
+			"file" : "C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libsamplerate-populate"
+		],
+		"name" : "libsamplerate-populate"
+	}
+}

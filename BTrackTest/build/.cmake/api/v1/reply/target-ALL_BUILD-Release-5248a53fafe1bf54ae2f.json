@@ -1,0 +1,87 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "misc_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "my_app::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "callback_hang_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "termination_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "throughput_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "samplerate::@9e851a7030aba6c63e43"
+		},
+		{
+			"id" : "simple_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "downsample_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "nullptr_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "varispeed_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "callback_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "multichan_throughput_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "float_short_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "snr_bw_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "reset_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "clone_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "multi_channel_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "src-evaluate::@e86f7de38bb337481fcc"
+		}
+	],
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,14 @@
+# Target labels
+ libsamplerate-populate
+# Source files and their labels
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/libsamplerate-populate
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/e6e1b391260450bc6ec488cbc41d9dc6/libsamplerate-populate.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/66092d22208a03fe7c9b63b9f8fee8fb/libsamplerate-populate-complete.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-install.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-mkdir.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-download.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-update.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-patch.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-configure.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-build.rule
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-subbuild/CMakeFiles/346d73cb75b4b3e3ea2dcaedbf4cd478/libsamplerate-populate-test.rule

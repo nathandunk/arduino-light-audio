@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/ClipMode.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/src/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakePushCheckState.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckCSourceRuns.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/WriteBasicConfigVersionFile.cmake

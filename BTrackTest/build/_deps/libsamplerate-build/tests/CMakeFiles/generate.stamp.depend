@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindFFTW3.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/tests/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPkgConfig.cmake

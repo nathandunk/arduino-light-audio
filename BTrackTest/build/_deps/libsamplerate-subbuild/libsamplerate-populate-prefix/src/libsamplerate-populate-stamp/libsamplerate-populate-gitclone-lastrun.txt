@@ -1,0 +1,3 @@
+repository='https://github.com/libsndfile/libsamplerate.git'
+module=''
+tag=''

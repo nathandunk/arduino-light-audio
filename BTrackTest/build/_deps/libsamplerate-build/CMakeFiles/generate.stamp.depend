@@ -1,0 +1,26 @@
+# CMake generation dependency list for this directory.
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/CMakeLists.txt
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindFLAC.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindOgg.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindOpus.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindSndFile.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/cmake/FindVorbis.cmake
+C:/Git/arduino-light-audio/BTrackTest/build/_deps/libsamplerate-src/config.h.in
+C:/Program Files/CMake/share/cmake-3.14/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/DartConfiguration.tcl.in
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/TestBigEndian.cmake
+C:/Program Files/CMake/share/cmake-3.14/Templates/CPackConfig.cmake.in
