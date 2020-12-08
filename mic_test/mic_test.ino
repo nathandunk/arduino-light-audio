@@ -1,5 +1,22 @@
-// Arduino Beat Detector By Damian Peckett 2015
-// License: Public Domain.
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+ #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#endif
+
+// Which pin on the Arduino is connected to the NeoPixels?
+// On a Trinket or Gemma we suggest changing this to 1:
+#define LED_PIN    6
+
+// How many NeoPixels are attached to the Arduino?
+#define LED_COUNT 50
+
+// Declare our NeoPixel strip object:
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_RGB + NEO_KHZ800);
+
+double brightness = 0.25;
+double R = 255;
+double G = 255;
+double B = 255;
 
 // Our Global Sample Rate, 5000hz
 #define SAMPLEPERIODUS 200
@@ -13,13 +30,20 @@
 #endif
 
 void setup() {
+    strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+    strip.fill(strip.Color(0.0,0.0,0.0));
+    strip.show();            // Turn OFF all pixels ASAP
+    strip.setBrightness(10); // Set BRIGHTNESS to about 1/5 (max = 255)
+    
     // Set ADC to 77khz, max for 10bit
     sbi(ADCSRA,ADPS2);
     cbi(ADCSRA,ADPS1);
     cbi(ADCSRA,ADPS0);
 
     //The pin with the LED
-    pinMode(2, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
+
+    Serial.begin(115200);
 }
 
 // 20 - 200hz Single Pole Bandpass IIR Filter
@@ -63,7 +87,7 @@ void loop() {
 
     for(i = 0;;++i){
         // Read ADC and center so +-512
-        sample = (float)analogRead(A0)-503.f;
+        sample = (float)analogRead(A1)-503.f;
 
         // Filter only bass component
         value = bassFilter(sample);
@@ -78,11 +102,29 @@ void loop() {
                 beat = beatFilter(envelope);
 
                 // Threshold it based on potentiometer on AN1
-                thresh = 0.02f * (float)analogRead(A0);
+                thresh = 0.04f * (float)analogRead(A0);
+                Serial.print(beat);
+                Serial.print(" ");
+                Serial.println(thresh);
+                Serial.print(" ");
+                
+//                Serial.print(beat);
+//                Serial.print(", ");
+//                Serial.print(thresh);
+//                Serial.print(", ");
+//                Serial.print((beat > thresh) ? "HIGH": "LOW");
+//                Serial.println();
 
                 // If we are above threshold, light up LED
-                if(beat > thresh) digitalWrite(2, HIGH);
-                else digitalWrite(2, LOW);
+                if(beat > thresh) {
+                  digitalWrite(LED_BUILTIN, HIGH);
+                  strip.fill(strip.Color(R*brightness, G*brightness, B*brightness));
+                }
+                else {
+                  digitalWrite(LED_BUILTIN, LOW);
+                  strip.fill(strip.Color(0.0,0.0,0.0));
+                }
+                strip.show();
 
                 //Reset sample counter
                 i = 0;

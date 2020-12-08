@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <CustomBuild Include="C:\Git\arduino-light-audio\BTrackTest\build\CMakeFiles\1b87754d0b88fbb4e10b67be3c4767b4\PACKAGE_force.rule">
       <Filter>CMake Rules</Filter>

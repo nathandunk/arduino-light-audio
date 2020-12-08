@@ -1,0 +1,84 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/_deps/libsamplerate-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "simple_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "reset_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "multi_channel_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "clone_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "throughput_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "termination_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "downsample_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "nullptr_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "callback_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "callback_hang_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "samplerate::@9e851a7030aba6c63e43"
+		},
+		{
+			"id" : "misc_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "snr_bw_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "varispeed_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "float_short_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "multichan_throughput_test::@e86f7de38bb337481fcc"
+		},
+		{
+			"id" : "src-evaluate::@e86f7de38bb337481fcc"
+		}
+	],
+	"id" : "ALL_BUILD::@c5dab3e3c0c6929e9e91",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "_deps/libsamplerate-build",
+		"source" : "build/_deps/libsamplerate-src"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
