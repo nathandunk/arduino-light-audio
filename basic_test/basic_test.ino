@@ -85,25 +85,26 @@ long long int period = 0;
 
 int total_colors = 0;
 
-const int num_colors = 7;
-double time_scale = 3.0;
+double time_scale = 2.0;
+const int num_colors = 4;
 
-//int colors[num_colors][3] = {{255,  0,  0}, // Red
-//                    {  0,255,  0}, // Green
-//                    {  0,  0,255}};// Blue
+int colors[num_colors][3] = {{255, 30, 30}, // Red
+                             { 51,204,255}, // Blue
+                             {  0,255, 30}, // Green
+                             {255,255,255}};// White
 
 //int colors[num_colors][3] = {{249,110, 70}, // orange
-//                    { 77,170, 87}, // green
-//                    {249,200, 70},  // yellow
-//                    {118,190,208}};// blue
+//                             { 77,170, 87}, // green
+//                             {249,200, 70},  // yellow
+//                             {118,190,208}};// blue
 
-int colors[num_colors][3] = {{249, 65, 68}, 
-                             {243,114, 44}, 
-                             {244,150, 30}, 
-                             {249,199, 79},
-                             {144,190,109},
-                             { 67,170,139},
-                             { 87,117,144}};
+//int colors[num_colors][3] = {{249, 65, 68}, 
+//                             {243,114, 44}, 
+//                             {244,150, 30}, 
+//                             {249,199, 79},
+//                             {144,190,109},
+//                             { 67,170,139},
+//                             { 87,117,144}};
 
 int last_color[3];
 int current_color[3];
