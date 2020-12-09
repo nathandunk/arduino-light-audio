@@ -1,5 +1,3 @@
-//Program by Michael Bartlett
-
 //Libraries
 #include <Adafruit_NeoPixel.h>  //Library to simplify interacting with the LED strand
 #include <math.h>
@@ -13,19 +11,6 @@
 #define LED_HALF  LED_TOTAL/2
 #define AUDIO_PIN A1  //Pin for the envelope of the sound detector
 #define KNOB_PIN  A0  //Pin for the trimpot 10K
-
-
-//// defines for setting and clearing register bits
-//#ifndef cbi
-//#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
-//#endif
-//#ifndef sbi
-//#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
-//#endif
-
-//////////<Globals>
-//  These values either need to be remembered from the last pass of loop() or 
-//  need to be accessed by several functions in one pass, so they need to be global.
 
 //Low pass butterworth filter order=1 alpha1=0.033333333333333 
 class  FilterBuLp1
@@ -48,8 +33,6 @@ class  FilterBuLp1
     }
 };
 
-
-
 Adafruit_NeoPixel strand = Adafruit_NeoPixel(LED_TOTAL, LED_PIN, NEO_RBG + NEO_KHZ800);  //LED strand objetc
 
 int gradient = 0; //Used to iterate and loop through each color palette gradually
@@ -64,8 +47,8 @@ int num_samples = 0;
 int volume = 0;    //Holds the volume level read from the sound detector.
 int last = 0;      //Holds the value of volume from the previous loop() pass.
 
-float maxVol = 15;     //Holds the largest volume recorded thus far to proportionally adjust the visual's responsiveness.
-float knob = 1023.0;   //Holds the percentage of how twisted the trimpot is. Used for adjusting the max brightness.
+double maxVol = 15;     //Holds the largest volume recorded thus far to proportionally adjust the visual's responsiveness.
+double knob = 1023.0;   //Holds the percentage of how twisted the trimpot is. Used for adjusting the max brightness.
 float avgVol = 0;      //Holds the "average" volume-level to proportionally adjust the visual experience.
 float avgBump = 0;     //Holds the "average" volume-change to trigger a "bump."
 
@@ -113,21 +96,10 @@ int use_color[3];
 
 FilterBuLp1 filter;
 
-//float filterFrequency = 5.0;
-//FilterOnePole lowpassFilter( LOWPASS, filterFrequency );
-
-//////////</Globals>
-
-
-//////////<Standard Functions>
-
 void setup() {    //Like it's named, this gets ran before any other function.
 
   memcpy(last_color, colors[num_colors-1], sizeof(last_color));
   memcpy(current_color, colors[0], sizeof(last_color));
-//  sbi(ADCSRA,ADPS2);
-//  cbi(ADCSRA,ADPS1);
-//  cbi(ADCSRA,ADPS0);
 
   Serial.begin(115200); //Sets data rate for serial data transmission.
 
@@ -154,7 +126,8 @@ void loop() {  //This is where the magic happens. This loop produces each frame 
   // end poor mans envelope filter
 
   //Record how far the trimpot is twisted on range (0,1) and scale the volume
-  knob = analogRead(KNOB_PIN) / 1023.0; 
+  double new_reading = analogRead(KNOB_PIN) / 1023.0;
+  knob = abs(new_reading - knob) > 0.02 ? new_reading : knob; 
   avgVol = volume*knob; 
 
   // store last volume to deal with slowly dimming
@@ -162,15 +135,20 @@ void loop() {  //This is where the magic happens. This loop produces each frame 
 
   // scaled volume
   scaled_volume = avgVol*avgVol;
-  scaled_volume = constrain(scaled_volume,100*knob,180*knob);
+//  scaled_volume = constrain(scaled_volume,100*knob,180*knob);
+  Serial.print(scaled_volume);
+  Serial.print(" ");
+  scaled_volume = max(100*knob,scaled_volume);
+  Serial.print(scaled_volume);
+  Serial.print(" ");
   scaled_volume = filter.step(scaled_volume);
-
+  
   // slowly dim instead of imediately going back to 0
   if (scaled_volume < scaled_volume_last){
     scaled_volume = scaled_volume_last * 0.99;
   }
 
-  Serial.println(scaled_volume);
+//  Serial.println(scaled_volume);
 
   curr_t_sec_last = curr_t_sec;
   
@@ -192,6 +170,12 @@ void loop() {  //This is where the magic happens. This loop produces each frame 
   while(micros()-curr_t < 3000){}
   last_t = curr_t;
   curr_t = micros();
+
+  Serial.print(scaled_volume/255.0*use_color[0]);
+  Serial.print(" ");
+  Serial.print(scaled_volume/255.0*use_color[1]);
+  Serial.print(" ");
+  Serial.println(scaled_volume/255.0*use_color[2]);
   
 //  if (!(num_samples % 1000)) {
 //    last_t = curr_t;
