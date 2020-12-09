@@ -2,7 +2,7 @@
 
 //Libraries
 #include <Adafruit_NeoPixel.h>  //Library to simplify interacting with the LED strand
-#include <Filters.h>
+//#include <Filters.h>
 #ifdef __AVR__
 #include <avr/power.h>   //Includes the library for power reduction registers if your chip supports them. 
 #endif                   //More info: http://www.nongnu.org/avr-libc/user-manual/group__avr__power.htlm
@@ -31,9 +31,10 @@ Adafruit_NeoPixel strand = Adafruit_NeoPixel(LED_TOTAL, LED_PIN, NEO_RGB + NEO_K
 
 int gradient = 0; //Used to iterate and loop through each color palette gradually
 
-int num_values = 10;
+int num_values = 3;
 
-int recent_volumes[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+int recent_volumes[] = {0, 0, 0};
+int max_val = 0;
 
 int num_samples = 0;
 
@@ -47,8 +48,8 @@ float avgBump = 0;     //Holds the "average" volume-change to trigger a "bump."
 
 bool bump = false;     //Used to pass if there was a "bump" in volume
 
-float filterFrequency = 5.0;
-FilterOnePole lowpassFilter( LOWPASS, filterFrequency );
+//float filterFrequency = 5.0;
+//FilterOnePole lowpassFilter( LOWPASS, filterFrequency );
 
 //////////</Globals>
 
@@ -66,8 +67,19 @@ void setup() {    //Like it's named, this gets ran before any other function.
 
 void loop() {  //This is where the magic happens. This loop produces each frame of the visual.
   int raw_volume = analogRead(AUDIO_PIN);       //Record the volume level from the sound detector
-  raw_volume = abs(raw_volume-450);
-  volume = get_envelope(raw_volume);
+  raw_volume = abs(raw_volume-503)+50;
+//  volume = get_envelope(raw_volume);
+  ////
+  recent_volumes[num_samples%num_values] = raw_volume;
+  max_val = 0;
+  for(int i; i < num_values; i++){
+    if (max_val < recent_volumes[i]){
+       max_val = recent_volumes[i];
+//       Serial.println(max_val);
+    }
+  }
+  volume = max_val;
+  ////
   num_samples++;
 //  volume = envelopeFilter(raw_volume);
 //  volume = lowpassFilter.input((float)raw_volume);
@@ -223,15 +235,7 @@ uint32_t Rainbow(unsigned int i) {
 }
 
 int get_envelope(int sample){
-  recent_volumes[num_samples%num_values] = sample;
-  int max_val = 0;
-  for(int i; i < 3; i++){
-    if (max_val < recent_volumes[i]){
-       max_val = recent_volumes[i];
-    }
-  }
-  Serial.println(max_val);
-  return max_val;
+  
 }
 //////////</Helper Functions>
 
