@@ -6,11 +6,12 @@
 #endif                   //More info: http://www.nongnu.org/avr-libc/user-manual/group__avr__power.htlm
 
 //Constants (change these as necessary)
-#define LED_PIN   6  //Pin for the pixel strand. Does not have to be analog.
-#define LED_TOTAL 50  //Change this to the number of LEDs in your strand.
-#define LED_HALF  LED_TOTAL/2
-#define AUDIO_PIN A1  //Pin for the envelope of the sound detector
-#define KNOB_PIN  A0  //Pin for the trimpot 10K
+#define LED_PIN        6  //Pin for the pixel strand. Does not have to be analog.
+#define LED_TOTAL      50  //Change this to the number of LEDs in your strand.
+#define AUDIO_PIN      A1  //Pin for the envelope of the sound detector
+#define KNOB_PIN       A0  //Pin for the trimpot 10K
+#define SCALE_LOW_PIN  A2 // pin for trimpot
+#define SCALE_HIGH_PIN A3 // Pin for 
 
 //Low pass butterworth filter order=1 alpha1=0.033333333333333 
 class  FilterBuLp1
@@ -68,7 +69,7 @@ long long int period = 0;
 
 int total_colors = 0;
 
-double time_scale = 2.0;
+double time_scale = 20.0;
 const int num_colors = 4;
 
 int colors[num_colors][3] = {{255, 30, 30}, // Red
@@ -110,6 +111,9 @@ void setup() {    //Like it's named, this gets ran before any other function.
 
 
 void loop() {  //This is where the magic happens. This loop produces each frame of the visual.
+  double scale_low  = (double)analogRead(SCALE_LOW_PIN)/1023.0;
+  double scale_high = (double)analogRead(SCALE_HIGH_PIN)/1023.0;
+  
   int raw_volume = analogRead(AUDIO_PIN);       //Record the volume level from the sound detector
   raw_volume = abs(raw_volume-503);
 
@@ -126,7 +130,7 @@ void loop() {  //This is where the magic happens. This loop produces each frame 
   // end poor mans envelope filter
 
   //Record how far the trimpot is twisted on range (0,1) and scale the volume
-  double new_reading = analogRead(KNOB_PIN) / 1023.0;
+  double new_reading = (double)analogRead(KNOB_PIN) / 1023.0;
   knob = abs(new_reading - knob) > 0.02 ? new_reading : knob; 
   avgVol = volume*knob; 
 
@@ -135,10 +139,10 @@ void loop() {  //This is where the magic happens. This loop produces each frame 
 
   // scaled volume
   scaled_volume = avgVol*avgVol;
-//  scaled_volume = constrain(scaled_volume,100*knob,180*knob);
   Serial.print(scaled_volume);
   Serial.print(" ");
   scaled_volume = max(100*knob,scaled_volume);
+//  scaled_volume = constrain(scaled_volume,200*knob*scale_low,300*knob*scale_high);
   Serial.print(scaled_volume);
   Serial.print(" ");
   scaled_volume = filter.step(scaled_volume);
